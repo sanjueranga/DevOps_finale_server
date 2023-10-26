@@ -1,6 +1,4 @@
-
-FROM openjdk:11
-WORKDIR /app
-COPY target/api-gateway.jar /app/api-gateway.jar
-EXPOSE 9004
-CMD ["java", "-jar", "api-gateway.jar"]
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
+COPY target/*.jar api-gateway.jar
+ENTRYPOINT ["java","-jar","/api-gateway.jar"]
