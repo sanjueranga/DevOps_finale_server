@@ -49,9 +49,9 @@ public class CarController {
 
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public String getAllCars() {
+    public List<CarResponse> getAllCars() {
         log.info("Fetching all cars...");
-        return "ado meka vada";
+        return carService.getAllCars();
     }
 
     @GetMapping("/{locationUuid}")
